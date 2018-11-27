@@ -1,5 +1,5 @@
 language: c
-script: make
+script: make CC=$CC
 compiler:
   - clang
   - gcc
