@@ -14,6 +14,4 @@ void parse_options(int , char **, clip_options_t *);
 int execute_command(clip_options_t *);
 FILE * get_repository_file(clip_options_t *);
 
-#define ASDF 2
-
 #endif
