@@ -7,9 +7,12 @@
 
 typedef struct _options {
     bool is_input;
+    char *repository_filename;
 } clip_options_t;
 
 void parse_options(int , char **, clip_options_t *);
+int execute_command(clip_options_t *);
+FILE * get_repository_file(clip_options_t *);
 
 #define ASDF 2
 

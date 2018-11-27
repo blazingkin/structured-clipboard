@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-ansi -Wall -pedantic -g -Og
 
-FILES=clip
+FILES=clip input output repository
 SOURCE_FOLDER=src
 
 OBJECTS=$(addsuffix .o, $(FILES))

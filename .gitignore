@@ -1,6 +1,9 @@
 # Binary
 clip
 
+# Data repository file
+clip.dat
+
 # Prerequisites
 *.d
 
