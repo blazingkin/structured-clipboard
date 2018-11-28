@@ -8,7 +8,9 @@ int main (int argc, char *argv[]){
 
 int execute_command(clip_options_t *options){
     FILE * repository_file;
+    repository_t repository = {'\0'};
     repository_file = get_repository_file(options);
+    repository.file_repository = repository_file;
 
     /* Check if some error occurred */
     if (repository_file == NULL){
@@ -16,6 +18,11 @@ int execute_command(clip_options_t *options){
         return 1;
     }
 
+    if (options->is_input) {
+       /* handle_input(); */
+    }else{
+
+    }
 
     fclose(repository_file);
     return 0;
@@ -39,7 +46,8 @@ FILE * get_repository_file(clip_options_t *options){
         mode = "ab+";
     }else{
         /* If we are outputting, then we will need information from the repository */
-        mode = "rb+";
+        /* We may also have to modify it */
+        mode = "arb+";
     }
     return fopen(options->repository_filename, mode);
 }
