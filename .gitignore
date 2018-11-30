@@ -3,6 +3,7 @@ clip
 
 # Data repository file
 clip.dat
+clip.info
 
 # Prerequisites
 *.d

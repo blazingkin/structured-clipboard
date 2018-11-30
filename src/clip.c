@@ -10,7 +10,7 @@ int execute_command(clip_options_t *options){
     FILE * repository_file;
     repository_t repository = {'\0'};
     repository_file = get_repository_file(options);
-    repository.file_repository = repository_file;
+    repository.info_file = repository_file;
 
     /* Check if some error occurred */
     if (repository_file == NULL){
@@ -19,9 +19,9 @@ int execute_command(clip_options_t *options){
     }
 
     if (options->is_input) {
-       /* handle_input(); */
+        handle_input(options, &repository);
     }else{
-
+        handle_output(options, &repository);
     }
 
     fclose(repository_file);
@@ -36,7 +36,7 @@ void parse_options(int argc, char *argv[], clip_options_t *result) {
         }
     }
     /* Temporarily set the repository file to clip.dat */
-    result->repository_filename = "clip.dat";
+    result->repository_filename = "clip.info";
 }
 
 FILE * get_repository_file(clip_options_t *options){
